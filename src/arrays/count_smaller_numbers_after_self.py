@@ -41,5 +41,5 @@ class Solution:
     def countSmaller(self, nums: List[int]) -> List[int]:
         N = len(nums)
         count = [0] * N
-        
+
 
