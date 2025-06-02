@@ -1,25 +1,25 @@
-    class Solution:
-        def myAtoi(self, s: str) -> int:
-            s = s.lstrip()
-            negative = 1
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        s = s.lstrip()
+        negative = 1
 
-            if s.startswith('-'):
-                negative = -1
-                s = s[1:]
-            elif s.startswith('+'):
-                s = s[1:]
+        if s.startswith('-'):
+            negative = -1
+            s = s[1:]
+        elif s.startswith('+'):
+            s = s[1:]
 
-            N = len(s)
-            current = 0
-            for i in range(N):
-                if not s[i].isdigit():
-                    break
-                current = current * 10 + int(s[i])
+        N = len(s)
+        current = 0
+        for i in range(N):
+            if not s[i].isdigit():
+                break
+            current = current * 10 + int(s[i])
 
-            current *= negative
-            current = min(current, 2**31 - 1)
-            current = max(current, -2**31)
-            return current
+        current *= negative
+        current = min(current, 2**31 - 1)
+        current = max(current, -2**31)
+        return current
 
 
 
